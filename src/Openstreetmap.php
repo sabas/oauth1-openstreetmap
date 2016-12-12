@@ -35,9 +35,9 @@ class Openstreetmap extends Server
         $attributes = $data->user->attributes();
         $user = new User();
 
-        $user->id = (string) $attributes['id'];
-        $user->displayName = (string) $attributes['display_name'];
-        $user->accountCreated = (string) $attributes['account_created'];
+        $user->uid = (string) $attributes['id'];
+        $user->nickname = (string) $attributes['display_name'];
+        $user->extra['accountCreated'] = (string) $attributes['account_created'];
 
         return $user;
     }
