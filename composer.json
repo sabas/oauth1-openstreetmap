@@ -1,0 +1,26 @@
+{
+    "name": "sabas/oauth1-openstreetmap",
+    "description": "Openstreetmap OAuth 1.0 Client Provider for The PHP League OAuth1-Client",
+    "license": "MIT",
+    "authors": [
+
+    ],
+    "keywords": [
+        "oauth",
+        "oauth1",
+        "client",
+        "openstreetmap"
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "league/oauth1-client": "~1.2"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "sabas\\OAuth1\\Client\\Server\\": "src/"
+        }
+    }
+}
