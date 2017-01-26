@@ -32,15 +32,19 @@ class Openstreetmap extends Server
 
     public function userDetails($data, TokenCredentials $tokenCredentials)
     {
-        $user = $data->user;
-        $attributes = $user->attributes();
+
+        $attributes = $data->user->attributes();
+
         $user = new User();
+        $user->uid = (string) $attributes['id'];
+        $user->nickname = (string) $attributes['display_name'];
+        $user->description = (string) $data->user->description;
+        $user->imageUrl = (string) $data->user->img['href'];
+        $user->location = (string) $data->user->home['lon'].",".$data->user->home['lat'];
+        $user->extra['accountCreated'] = (string) $attributes['account_created'];
+        $user->extra['changesets'] = (string) $data->user->changesets['count'];
 
-        $user->id = (string) $attributes['id'];
-        $user->displayName = (string) $attributes['display_name'];
-        $user->accountCreated = (string) $attributes['account_created'];
-
-        return $data;
+        return $user;
     }
 
     /**
