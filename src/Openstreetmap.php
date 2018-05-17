@@ -12,22 +12,22 @@ class Openstreetmap extends Server
 
     public function urlTemporaryCredentials()
     {
-        return 'http://www.openstreetmap.org/oauth/request_token';
+        return 'https://www.openstreetmap.org/oauth/request_token';
     }
 
     public function urlAuthorization()
     {
-        return 'http://www.openstreetmap.org/oauth/authorize';
+        return 'https://www.openstreetmap.org/oauth/authorize';
     }
 
     public function urlTokenCredentials()
     {
-        return 'http://www.openstreetmap.org/oauth/access_token';
+        return 'https://www.openstreetmap.org/oauth/access_token';
     }
 
     public function urlUserDetails()
     {
-        return 'http://api.openstreetmap.org/api/0.6/user/details';
+        return 'https://api.openstreetmap.org/api/0.6/user/details';
     }
 
     public function userDetails($data, TokenCredentials $tokenCredentials)
